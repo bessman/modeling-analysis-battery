@@ -21,6 +21,9 @@
 \usepackage{geometry} % Required to change the page size to A4
 \geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
 
+\usepackage[T1]{fontenc} % Enable in text < > symbols
+\usepackage{lmodern}
+
 \usepackage{graphicx} % Required for including pictures
 
 \usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
@@ -151,13 +154,35 @@ The process is reversed during discharge \cite{reddy_thomas_section_2011-1}.
 
 \subsubsection{The positive electrode} % Sub-sub-section
 
-Typical positive electrode materials are LiCoO\textsubscript{2}, LiMn\textsubscript{2}O\textsubscript{4}, and LiFePO\textsubscript{4} \cite{kulova_new_2013}.
+Typical positive electrode materials are lithium-cobalt oxides, lithium-nickel oxides, lithium manganese oxide spinels, and more recently lithium-iron phosphates \cite{kulova_new_2013}.
+Aside from LiFePO\textsubscript{4}, these materials all operate at potentials positive of 3.5 V during the entire charge/discharge cycle, which is not always ideal from a safety perspective.
+\\
+Although LiCoO\textsubscript{2} is still the most common positive electrode material, LiFePO\textsubscript{4} is gaining traction due to its increased safety properties.
+The specific energy of LiFePO\textsubscript{4} (160 mAh/g) is comparable to that of LiCoO\textsubscript{2} (155 mAh/g), but less than LiNi\textsubscript{0.8}Co\textsubscript{0.15}Al\textsubscript{0.05}O\textsubscript{2} (200 mAh/g).
+As iron is considerably cheaper than cobalt, the raw material cost of LiFePO\textsubscript{4} is correspondingly lower than for LiCoO\textsubscript{2}.
+However, this effect is offset by LiFePO\textsubscript{4} being more expensive to produce.
+As LiFePO\textsubscript{4} contains both bivalent and trivalend iron, it must be prepared in inert atmosphere to prevent the bivalent iron from oxidizing.
+LiFePO\textsubscript{4} particles must also be small (< 500 nm) to provide high enough current density.
+\\
+Another promising material is Li[Li\textsubscript{1/9}NI\textsubscript{1/3}Mn\textsubscript{5/9}]O\textsubscript{2}, which has a specific capacity of 275 mAh/g.
+This material is not currently commercialized due to low rate capability \cite{reddy_thomas_section_2011-1}.
+\\
+Vanadium oxide based positive electrodes are also under development.
+The above mentioned Co, Ni, Mn, and Fe based materials all have a maximum valency change of 1 when intercalating lithium; vanadium oxide (V\textsubscript{2}O\textsubscript{5}) can theoretically change valency by 3 units.
+This allows for a higher specific capacity: 450 mAh/g has been achieved for thin-film electrodes.
+However, the specific volume of this material changes drastically when this much lithium is inserted, which is a problem for lifetime \cite{kulova_new_2013}.
+\\
+Work is also ongoing to find electrode materials that operate at potentials higher than 4.5 V.
+Although such high potentials are problematic from a safety perspective, they have the potential to offer increased energy density.
+One such material is LiMn\textsubscript{1/3}Ni\textsubscript{1/3}Co\textsubscript{1/3}O\textsubscript{4}.
+The primary obstacle for this class of materials is the need for electrolytes which are stable at these high potentials \cite{kulova_new_2013}.
 
 %------------------------------------------------
 
 \subsubsection{The negative electrode} % Sub-sub-section
 
-As of 2010, all commercial Li-ion batteries used graphite as the negative electrode active material, but other materials, foremost among them Li\textsubscript{3/4}Ti\textsubscript{5/4}O\textsubscript{4} has recently begun making headway in this market \cite{kulova_new_2013}.
+Most commercial Li-ion batteries used graphite as the negative electrode active material, but other materials, foremost among them Li\textsubscript{3/4}Ti\textsubscript{5/4}O\textsubscript{4} has recently begun making headway in this market \cite{kulova_new_2013}.
+Sony is using tin based negative electrodes in some of their commercial cells \cite{reddy_thomas_section_2011-2}.
 The potential of lithium intercalation into graphite is only 0.1 V - 0.2 V positive of lithium's reduction potential (-3.045 V vs. SHE).
 Combined with graphite's high specific capacity of about 360 mAh/g, this property makes graphite an excellent substitute for metallic lithium \cite{reddy_thomas_figure_2011} \cite{reddy_thomas_figure_2011-1}.
 However, the specific volume of graphite can change by as much as 12\% during intercalation, which causes stress in the binder material \cite{kulova_new_2013}.
@@ -176,15 +201,34 @@ Although inferior to graphite in terms of raw electrochemical performance, this 
 The electrochemical performance is also good enough to not be wholly discouraging, with a specific capacity of 175 mAh/g and an intercalation potential approximately 1 V above lithium \cite{kulova_new_2013} \cite{reddy_thomas_figure_2011}.
 \\
 Another candidate for the negative electrode material are metal and metal composites.
-These compounds often have a large potential gap of up to 0.5 V between the intercalation and deintercalation reactions, which is bad news for the energy efficiency of the hypothetical resulting cell.
-They also have poor cyclability and modest specific capacity at the potentials required of a lithium-ion battery negative electrode.
+Most composites include tin due to the metal's ability to intercalate large amounts of lithium.
+One such compound is Cu\textsubscript{6}Sn\textsubscript{5}, which Hu et al. used to achieve discharge a capacity of 370 mAh/g in the 0.1 V to 1.25 V region for 70 cycles \cite{hu_cyclic_2009}.
+However, cyclic voltammetry of this material showed a large potential gap of up to 0.5 V between the intercalation and deintercalation reactions, which is bad news for the energy efficiency of the hypothetical resulting cell.
+Overall, metal composite negative electrode materials also display poor cyclability and modest specific capacity at the potentials required of a lithium-ion battery negative electrode.
 As such, these materials are not considered strong contenders for this application \cite{kulova_new_2013}.
 \\
-Silicon.
+Another potential material is silicon.
+Theoretically, 22 lithium atoms can be inserted per 5 silicon atoms, which corresponds to a specific reversible capacity of 2000 mAh/g.
+Unfortunately this is accompanied by a large increase in specific volume for the silicon crystals.
+A possible way to overcome this obstacle is the use of ultra thin (~100 nm) silicon electrodes, which have been shown to have good cycling stability with excellent specific capacity retention \cite{kulova_new_2013}.
+\\
+Linden's Handbook of Batteries describes both Si and Sn based negative electrodes as "almost commercially viable" \cite{reddy_thomas_section_2011-2}.
 
 %------------------------------------------------
 
 \subsubsection{The electrolyte} % Sub-sub-section
+
+Since lithium-ion cells operate outside of the stability region of water, electrolytes must necessarily be nonaqueous.
+
+\cite{reddy_thomas_section_2011-3}
+
+Salts.
+
+Solvents.
+
+Additives.
+
+\subsubsection{Binder materials} % Sub-sub-section
 
 \begin{description} % Numbered list example
 
