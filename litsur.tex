@@ -22,6 +22,7 @@
 \geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
 
 \usepackage[T1]{fontenc} % Enable in text < > symbols
+\usepackage{fancyvrb} % Used to define commands for other symbols
 \usepackage{lmodern}
 
 \usepackage{graphicx} % Required for including pictures
@@ -40,6 +41,15 @@
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
 
 \begin{document}
+
+%----------------------------------------------------------------------------------------
+%	COMMAND DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+\newcommand{\mytilde}{$\sim$}
+\begin{Verbatim}[commandchars=\\\{\}]
+sig symm : (Board, [(Int, Int)]) \mytilde> Bool
+\end{Verbatim}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -210,7 +220,7 @@ As such, these materials are not considered strong contenders for this applicati
 Another potential material is silicon.
 Theoretically, 22 lithium atoms can be inserted per 5 silicon atoms, which corresponds to a specific reversible capacity of 2000 mAh/g.
 Unfortunately this is accompanied by a large increase in specific volume for the silicon crystals.
-A possible way to overcome this obstacle is the use of ultra thin (~100 nm) silicon electrodes, which have been shown to have good cycling stability with excellent specific capacity retention \cite{kulova_new_2013}.
+A possible way to overcome this obstacle is the use of ultra thin (\mytilde{}100 nm) silicon electrodes, which have been shown to have good cycling stability with excellent specific capacity retention \cite{kulova_new_2013}.
 \\
 Linden's Handbook of Batteries describes both Si and Sn based negative electrodes as "almost commercially viable" \cite{reddy_thomas_section_2011-2}.
 
@@ -218,30 +228,69 @@ Linden's Handbook of Batteries describes both Si and Sn based negative electrode
 
 \subsubsection{The electrolyte} % Sub-sub-section
 
-Since lithium-ion cells operate outside of the stability region of water, electrolytes must necessarily be nonaqueous.
-
-\cite{reddy_thomas_section_2011-3}
-
-Salts.
-
-Solvents.
-
-Additives.
-
-\subsubsection{Binder materials} % Sub-sub-section
+Since lithium-ion cells operate outside of the stability region of water, the electrolyte must necessarily be nonaqueous.
+It typically consists of an organic solvent and a lithium salt, although solid electrolytes also exist.
+Solid electrolytes are also called gel electrolytes or polymer electrolytes \cite{reddy_thomas_section_2011-3}.
+\\
+As of today, lithium phosphorus hexafluoride, LiPF\textsubscript{6}, is the most used salt for lithium-ion batteries due to its "high ionic conductivity (10 mS/cm), high lithium-ion transference number (\mytilde{}0.35), and acceptable safety properties" \cite{reddy_thomas_section_2011-3}.
+Additionally, it has the advantageous ability to passivate aluminium at very high potentials (over 4.5 V vs lithium redox), which is frequently used as a current collector on the positive electrode \cite{niedzicki_new_2011}.
+However, this salt has many negative properties, which has spurred research into finding a suitable replacement.
+For example, it when it reacts with water it forms HF, which corrodes the positive electrode active material.
+It also has a fairly narrow stability range, and is especially sensitive to high temperatures.
+At temperatures above 80°C it reacts with ethylene carbonate (a common solvent) to form extremely toxic flouroethanol \cite{hammami_lithium-ion_2003}.
+Other salts which are sometimes used are LiBF\textsubscript{6}, LiB(C\textsubscript{2}O\textsubscript{4})\textsubscript{2}, and LiN(CF\textsubscript{3}SO\textsubscript{2})\textsubscript{2}.
+These salts have various advantages over LiPF\textsubscript{6}, such as being more stable when exposed to water, and having improved high temperature performance \cite{reddy_thomas_section_2011-3}.
+Niedzicki et al. recently presented two new salts for high voltage cells operating beyond 4 V.
+These salts, lithium(2-trifluoromethyl-4,5-dicyano-imidazolate) and lithium(2-pentafluoroethyl-4,5-dicyano-imidazolate) have a cyclic structure and are also able to passivate aluminium.
+Their conductivity is lower than that of LiPF\textsubscript{6}, but they are more thermally stable and release less HF during combustion \cite{niedzicki_new_2011}.
+\\
+The salt is dissolved in a mixture of organic liquids, or in a high-molecular-weight polymer in the case of solid electrolytes.
+Different compounds such as carbonates, ethers, and acetates have properties both positive and negative to the performance of the cell, and by finding the correct mixture one can minimize each compound's negative effects while maximizing its positive effects.
+For example, ethylene carbonate (EC) improves the irreversible capacity of the cell, but is solid in room temperature.
+By combining it with other solvents with lower melting points this desirable property can benefit batteries which will be used at ambient temperatures.
+Commercial cells use three to five organic compounds in the solvent, plus additives.
+The conductivity of the electrolyte depends primarily on the solvent mixture, the salt concentration, and the temperature.
+For LiPF\textsubscript{6} in a 1:1 mixture of EC and another solvent, the order of magnitude is 1 - 10 mS/cm.
+The conductivity increases with salt concentration and electrolyte temperature \cite{reddy_thomas_section_2011-3}.
+In 2011, Kamaya et al. presented a solid electrolyte, Li\textsubscript{10}GEP\textsubscript{2}S\textsubscript{12}, which has an ionic conductivity of 12 mS/cm at room temperature.
+This is conductivity slightly higher than what is typically achievable with LiPF\textsubscript{6}-based liquid electrolytes, and Kamaya's solid electrolyte is also safer \cite{kamaya_lithium_2011}.
+Ionic liquids have also been considered as electrolytes, but since they are neither stable at the negative electrode potential nor are able to passivate it, attempts to use them have so far been unsuccesfull \cite{blomgren_liquid_2003}.
+\\
+Another desirable property of the electrolyte is the ability to form a stable passivating layer on the negative electrode.
+Since the negative electrode operates at just a few mV above lithium's redox potential, no electrolyte is stable in its vicinity.
+It is therefore important that the electolyte's reaction at the negative electrode form a layer that is impenetrable to the electrolyte itself, yet allows lithium-ions to move freely across it.
+The layer must also be stable over time and over the entire potential span of the negative electrode.
+Such a layer is called a solid electrolyte interface (SEI) layer \cite{reddy_thomas_section_2011-3}.
+\\
+Different chemicals are often added to the electrolyte to improve its properties.
+These chemicals are not themselves charge-carryers or solvents, and are simply called additives.
+Some of the properties which can be improved by additives are:
 
 \begin{description} % Numbered list example
 
-\item[First] \hfill \\
-\lipsum[9] % Dummy text
+\item[Flammability] \hfill \\
+Or rather, the lack thereof.
+Organic solvents are highly flammable, and if a thermal runaway reaction occurs it can be both violent and difficult to stop.
+By adding a compound which prevents the chain reaction from proceeding once the external heat source has been removed damage to surrounding components can be minimized, although the battery itself will of course be unsalvagable \cite{blomgren_liquid_2003}.
 
-\item[Second] \hfill \\
-\lipsum[10] % Dummy text
+\item[SEI formation and stability] \hfill \\
+Without the presence of SEI forming additives, the SEI must be formed by using up other electrolyte components.
+Since the SEI formation is irreversible, this causes a capacity loss.
+If instead the SEI can be formed by non-charge-carrying species, this capacity loss can be reduced.
+Additionally, by improving the stability of the SEI further capacity loss can be avoided \cite{reddy_thomas_section_2011-4}.
 
-\item[Third] \hfill \\
-\lipsum[11] % Dummy text
+\item[Overcharge protection] \hfill \\
+Normally, if a lithium ion battery is charged beyond its nominal voltage, it will degrade rapidly as the electrolyte starts to decompose into highly reactive species such as HF, which in turn will damage other components in the cell.
+This is not a problem in certain other battery chemistries, such as lead-acid.
+There, the aqueous electrolyte will undergo electrolysis and form hydrogen and water, which will soon recombine into water after the overcharging stops.
+Overcharge protection in lithium-ion batteries work by a similar principle; a species is added which is more reactive than the electrolyte at high potentials and reacts at the positive electrode to form a cation which is reduced back to its original form at the negative electrode.
+This is called a redox shuttle \cite{blomgren_liquid_2003} \cite{reddy_thomas_section_2011-4}.
 
 \end{description} 
+
+\subsubsection{Separator materials} % Sub-sub-section
+
+\subsubsection{Binder materials} % Sub-sub-section
 
 %------------------------------------------------
 
