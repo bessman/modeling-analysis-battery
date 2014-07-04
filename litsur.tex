@@ -21,9 +21,12 @@
 \usepackage{geometry} % Required to change the page size to A4
 \geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
 
-\usepackage[T1]{fontenc} % Enable in text < > symbols
+\usepackage[T1]{fontenc} % Enable < > symbols in verbatim
 \usepackage{fancyvrb} % Used to define commands for other symbols
+\usepackage{fontspec}
 \usepackage{lmodern}
+
+\usepackage{gensymb} % \degree = ° 
 
 \usepackage{graphicx} % Required for including pictures
 
@@ -134,7 +137,6 @@ Example citation %\cite{Figueredo:2009dg}.
 %----------------------------------------------------------------------------------------
 %	MAJOR SECTION 1
 %----------------------------------------------------------------------------------------
-
 \section{The lithium-ion battery} % Major section
 
 %------------------------------------------------
@@ -151,7 +153,7 @@ Since the lithium-ion battery was first commercialized by Sony in 1991, the tech
 It has also received considerable research effort, greatly improving energy density, power density, longevity, and cost efficiency.
 Due to this, lithium-ion batteries are now poised to do to the electric vehicle market what it did to the mobile appliances market twenty years ago \cite{reddy_thomas_section_2011}.
 However, many challenges remain before lithium-ion batteries are suitable for large-scale deployment in electrical vehicles.
-Further improvements to cost efficiency, or price per kWh, and longevity are especially important [citation needed].
+Further improvements to cost efficiency, or price per kWh, and longevity are especially important.
 
 %------------------------------------------------
 
@@ -164,64 +166,92 @@ The process is reversed during discharge \cite{reddy_thomas_section_2011-1}.
 
 \subsubsection{The positive electrode} % Sub-sub-section
 
-Typical positive electrode materials are lithium-cobalt oxides, lithium-nickel oxides, lithium manganese oxide spinels, and more recently lithium-iron phosphates \cite{kulova_new_2013}.
-Aside from LiFePO\textsubscript{4}, these materials all operate at potentials positive of 3.5 V during the entire charge/discharge cycle, which is not always ideal from a safety perspective.
+Typical positive electrode materials are lithium-cobalt oxides, lithium-nickel oxides, lithium-manganese oxide spinels, and more recently lithium-iron phosphates \cite{kulova_new_2013}.
+The working principle of all these materials is the same; reversible intercalation of lithium in the crystal structure of the host material.
 \\
-Although LiCoO\textsubscript{2} is still the most common positive electrode material, LiFePO\textsubscript{4} is gaining traction due to its increased safety properties.
-The specific energy of LiFePO\textsubscript{4} (160 mAh/g) is comparable to that of LiCoO\textsubscript{2} (155 mAh/g), but less than LiNi\textsubscript{0.8}Co\textsubscript{0.15}Al\textsubscript{0.05}O\textsubscript{2} (200 mAh/g).
+As far as the working principle is concered, all positive electrode materials are equal.
+Where they differ is in their specific capacity, potential range, cost, and stability.
+
+\begin{description} % Numbered list example
+
+\item[Lithium cobalt oxide] \hfill \\
+LiCoO\textsubscript{2} was one of the materials mentioned by Yoshino in the original patent, and is still the most common positive electrode material used today \cite{yoshino_secondary_1987}.
+Its specific capacity is 155 mAh/g and its potential profile is flat around 4 V.
+
+\item[Lithium iron phosphate] \hfill \\
+LiFePO\textsubscript{4} is gaining traction due to its decreased cost and increased safety properties compared to LiCoO\textsubscript{2}.
 As iron is considerably cheaper than cobalt, the raw material cost of LiFePO\textsubscript{4} is correspondingly lower than for LiCoO\textsubscript{2}.
 However, this effect is offset by LiFePO\textsubscript{4} being more expensive to produce.
-As LiFePO\textsubscript{4} contains both bivalent and trivalend iron, it must be prepared in inert atmosphere to prevent the bivalent iron from oxidizing.
+As LiFePO\textsubscript{4} contains bivalent iron, it must be prepared in inert atmosphere to prevent the iron from oxidizing.
 LiFePO\textsubscript{4} particles must also be small (< 500 nm) to provide high enough current density.
-\\
-Another promising material is Li[Li\textsubscript{1/9}NI\textsubscript{1/3}Mn\textsubscript{5/9}]O\textsubscript{2}, which has a specific capacity of 275 mAh/g.
-This material is not currently commercialized due to low rate capability \cite{reddy_thomas_section_2011-1}.
-\\
-Vanadium oxide based positive electrodes are also under development.
-The above mentioned Co, Ni, Mn, and Fe based materials all have a maximum valency change of 1 when intercalating lithium; vanadium oxide (V\textsubscript{2}O\textsubscript{5}) can theoretically change valency by 3 units.
+Its specific capacity is 160 mAh/g and its potential profile is flat at 3.5 V.
+Although its low potential decreases its specific energy, it simultaneously improves the safety of the material.
+
+\item[{Li[Li\textsubscript{1/9}NI\textsubscript{1/3}Mn\textsubscript{5/9}]O\textsubscript{2}}] \hfill \\
+This material has a specific capacity of 275 mAh/g and a midpoint potential of 3.8 V.
+It is not currently commercialized due to low rate capability \cite{reddy_thomas_section_2011-1}.
+
+\item[Lithium vanadium oxide] \hfill \\
+Co, Ni, Mn, and Fe based materials all have a maximum valency change of 1 when intercalating lithium; vanadium oxide (V\textsubscript{2}O\textsubscript{5}) can theoretically change valency by 3 units.
 This allows for a higher specific capacity: 450 mAh/g has been achieved for thin-film electrodes.
 However, the specific volume of this material changes drastically when this much lithium is inserted, which is a problem for lifetime \cite{kulova_new_2013}.
-\\
+
+\item[LiMn\textsubscript{1/3}Ni\textsubscript{1/3}Co\textsubscript{1/3}O\textsubscript{2}] \hfill \\
 Work is also ongoing to find electrode materials that operate at potentials higher than 4.5 V.
 Although such high potentials are problematic from a safety perspective, they have the potential to offer increased energy density.
-One such material is LiMn\textsubscript{1/3}Ni\textsubscript{1/3}Co\textsubscript{1/3}O\textsubscript{4}.
+One such material is LiMn\textsubscript{1/3}Ni\textsubscript{1/3}Co\textsubscript{1/3}O\textsubscript{2}.
 The primary obstacle for this class of materials is the need for electrolytes which are stable at these high potentials \cite{kulova_new_2013}.
+
+\end{description} 
 
 %------------------------------------------------
 
 \subsubsection{The negative electrode} % Sub-sub-section
 
+Unlike the lithium metal battery, lithium-ion batteries use an intercalating material not only at the positive electrode, but also at the negative.
 Most commercial Li-ion batteries used graphite as the negative electrode active material, but other materials, foremost among them Li\textsubscript{3/4}Ti\textsubscript{5/4}O\textsubscript{4} has recently begun making headway in this market \cite{kulova_new_2013}.
-Sony is using tin based negative electrodes in some of their commercial cells \cite{reddy_thomas_section_2011-2}.
+There are also some materials which form alloys with lithium instead of intercalation.
+
+\begin{description} % Numbered list example
+
+\item[Graphite] \hfill \\
 The potential of lithium intercalation into graphite is only 0.1 V - 0.2 V positive of lithium's reduction potential (-3.045 V vs. SHE).
 Combined with graphite's high specific capacity of about 360 mAh/g, this property makes graphite an excellent substitute for metallic lithium \cite{reddy_thomas_figure_2011} \cite{reddy_thomas_figure_2011-1}.
 However, the specific volume of graphite can change by as much as 12\% during intercalation, which causes stress in the binder material \cite{kulova_new_2013}.
 Additionally, graphite readily intercalates not only lithium ions, but also propylene carbonate (PC), which is frequently used as a solvent for the electrolyte.
 If PC is intercalated the graphite sheets will separate, a process known as exfoliation \cite{reddy_thomas_section_2011-2}.
 In light of these flaws, considerable effort is spent on developing alternative materials for the negative electrode.
-\\
-Many researchers have tried to use various metal oxides for this purpose.
-The first such attempt was reported in 1997 \cite{idota_tin-based_1997}, using a tin-based oxide.
+
+\item[Lithium titanate] \hfill \\
+One metal oxide of particular interest is lithium titanate (Li\textsubscript{3/4}Ti\textsubscript{5/4}O\textsubscript{4}).
+Its specific capacity is 175 mAh/g and its intercalation potential is approximately 1.5 V above lithium \cite{kulova_new_2013} \cite{reddy_thomas_figure_2011}.
+It therefore cannot provide as much charge or as much energy as a comparable amount of graphite.
+Although inferior to graphite in terms of specific capacity and potential, this material exhibits virtually zero change in volume during intercalation.
+
+\item[Lithium tin oxide] \hfill \\
+
+An earlier attempt at using metal oxides was reported in 1997 \cite{idota_tin-based_1997}, using a tin-based oxide.
 This technology seemed promising, boasting specific capacities as high as 600 mAh/g, but almost half of this is lost within the first 30 cycles.
 Nevertheless, work on this material is still ongoing \cite{kulova_new_2013}.
-Since then, a large body of work has been created, exploring a large number of metal oxides.
-None has proven superior to graphite, with either the potential vs. lithium being too high or the specific capacity being too low.
-One metal oxide of particular interest is lithium titanite (Li\textsubscript{3/4}Ti\textsubscript{5/4}O\textsubscript{4}).
-Although inferior to graphite in terms of raw electrochemical performance, this material exhibits virtually zero change in volume during intercalation.
-The electrochemical performance is also good enough to not be wholly discouraging, with a specific capacity of 175 mAh/g and an intercalation potential approximately 1 V above lithium \cite{kulova_new_2013} \cite{reddy_thomas_figure_2011}.
-\\
-Another candidate for the negative electrode material are metal and metal composites.
-Most composites include tin due to the metal's ability to intercalate large amounts of lithium.
+In 2005 Sony began using tin based negative electrodes in their 2.2 Ah Nexelion battery \cite{sony_sony_????}.
+The Nexelion was updated to 3.5 Ah in 2011 \cite{sony_sony_????-1}.
+
+\item[Lithium alloys] \hfill \\
+Some negative electrode materials deviate from the intercalation paradigm, operating instead by forming lithium alloys.
 One such compound is Cu\textsubscript{6}Sn\textsubscript{5}, which Hu et al. used to achieve discharge a capacity of 370 mAh/g in the 0.1 V to 1.25 V region for 70 cycles \cite{hu_cyclic_2009}.
-However, cyclic voltammetry of this material showed a large potential gap of up to 0.5 V between the intercalation and deintercalation reactions, which is bad news for the energy efficiency of the hypothetical resulting cell.
-Overall, metal composite negative electrode materials also display poor cyclability and modest specific capacity at the potentials required of a lithium-ion battery negative electrode.
+However, cyclic voltammetry of this material showed a large potential gap of up to 0.5 V between the charge and discharge reactions, which is bad news for the energy efficiency of the hypothetical resulting cell.
+Overall, metal alloy negative electrode materials also display poor cyclability and modest specific capacity at the potentials required of a lithium-ion battery negative electrode.
 As such, these materials are not considered strong contenders for this application \cite{kulova_new_2013}.
-\\
+
+\item[Silicon] \hfill \\
+
 Another potential material is silicon.
 Theoretically, 22 lithium atoms can be inserted per 5 silicon atoms, which corresponds to a specific reversible capacity of 2000 mAh/g.
 Unfortunately this is accompanied by a large increase in specific volume for the silicon crystals.
 A possible way to overcome this obstacle is the use of ultra thin (\mytilde{}100 nm) silicon electrodes, which have been shown to have good cycling stability with excellent specific capacity retention \cite{kulova_new_2013}.
-\\
+ 
+\end{description} 
+
 Linden's Handbook of Batteries describes both Si and Sn based negative electrodes as "almost commercially viable" \cite{reddy_thomas_section_2011-2}.
 
 %------------------------------------------------
@@ -235,10 +265,10 @@ Solid electrolytes are also called gel electrolytes or polymer electrolytes \cit
 As of today, lithium phosphorus hexafluoride, LiPF\textsubscript{6}, is the most used salt for lithium-ion batteries due to its "high ionic conductivity (10 mS/cm), high lithium-ion transference number (\mytilde{}0.35), and acceptable safety properties" \cite{reddy_thomas_section_2011-3}.
 Additionally, it has the advantageous ability to passivate aluminium at very high potentials (over 4.5 V vs lithium redox), which is frequently used as a current collector on the positive electrode \cite{niedzicki_new_2011}.
 However, this salt has many negative properties, which has spurred research into finding a suitable replacement.
-For example, it when it reacts with water it forms HF, which corrodes the positive electrode active material.
+For example, it reacts with water it forms HF, which corrodes the positive electrode active material.
 It also has a fairly narrow stability range, and is especially sensitive to high temperatures.
-At temperatures above 80°C it reacts with ethylene carbonate (a common solvent) to form extremely toxic flouroethanol \cite{hammami_lithium-ion_2003}.
-Other salts which are sometimes used are LiBF\textsubscript{6}, LiB(C\textsubscript{2}O\textsubscript{4})\textsubscript{2}, and LiN(CF\textsubscript{3}SO\textsubscript{2})\textsubscript{2}.
+At temperatures above 80\degree C it reacts with ethylene carbonate (a common solvent) to form extremely toxic flouroethanol \cite{hammami_lithium-ion_2003}.
+Other salts which are sometimes used are LiBF\textsubscript{6}, LiB(C\textsubscript{2}O\textsubscript{4})\textsubscript{2} (LiBOB), and LiN(CF\textsubscript{3}SO\textsubscript{2})\textsubscript{2} (LiNTF\textsubscript{2}).
 These salts have various advantages over LiPF\textsubscript{6}, such as being more stable when exposed to water, and having improved high temperature performance \cite{reddy_thomas_section_2011-3}.
 Niedzicki et al. recently presented two new salts for high voltage cells operating beyond 4 V.
 These salts, lithium(2-trifluoromethyl-4,5-dicyano-imidazolate) and lithium(2-pentafluoroethyl-4,5-dicyano-imidazolate) have a cyclic structure and are also able to passivate aluminium.
@@ -260,7 +290,7 @@ Another desirable property of the electrolyte is the ability to form a stable pa
 Since the negative electrode operates at just a few mV above lithium's redox potential, no electrolyte is stable in its vicinity.
 It is therefore important that the electolyte's reaction at the negative electrode form a layer that is impenetrable to the electrolyte itself, yet allows lithium-ions to move freely across it.
 The layer must also be stable over time and over the entire potential span of the negative electrode.
-Such a layer is called a solid electrolyte interface (SEI) layer \cite{reddy_thomas_section_2011-3}.
+Such a layer is called a solid electrolyte interphase (SEI) layer \cite{reddy_thomas_section_2011-3}.
 \\
 Different chemicals are often added to the electrolyte to improve its properties.
 These chemicals are not themselves charge-carryers or solvents, and are simply called additives.
@@ -280,7 +310,7 @@ If instead the SEI can be formed by non-charge-carrying species, this capacity l
 Additionally, by improving the stability of the SEI further capacity loss can be avoided \cite{reddy_thomas_section_2011-4}.
 
 \item[Overcharge protection] \hfill \\
-Normally, if a lithium ion battery is charged beyond its nominal voltage, it will degrade rapidly as the electrolyte starts to decompose into highly reactive species such as HF, which in turn will damage other components in the cell.
+Normally, if a lithium ion battery is charged beyond its nominal voltage it will degrade rapidly as the electrolyte starts to decompose into highly reactive species such as HF, which in turn will damage other components in the cell.
 This is not a problem in certain other battery chemistries, such as lead-acid.
 There, the aqueous electrolyte will undergo electrolysis and form hydrogen and water, which will soon recombine into water after the overcharging stops.
 Overcharge protection in lithium-ion batteries work by a similar principle; a species is added which is more reactive than the electrolyte at high potentials and reacts at the positive electrode to form a cation which is reduced back to its original form at the negative electrode.
@@ -290,15 +320,72 @@ This is called a redox shuttle \cite{blomgren_liquid_2003} \cite{reddy_thomas_se
 
 \subsubsection{Separator materials} % Sub-sub-section
 
-\subsubsection{Binder materials} % Sub-sub-section
+In cells which use a liquid electrolyte, an electrical isolator must be present between the electrodes to prevent short-circuits.
+This isolator must be permeable to the electrolyte and is termed the separator.
+In lithium-ion cells the separator is typically 16-40 µm in width and is made of the polyalkenes polyethylene and polypropylene.
+These materials provide good mechanical properties, including the ability to be tightly wound in one direction without yielding or shrinking in width, puncture resistance, and high wettability by the electrolyte.
+The separator is microporous with pore sizes of 0.03 µm to 0.1 µm and between 30\% to 50\% porosity\cite{reddy_thomas_section_2011-5}.
+\\
+The separator also provides additional safety functionality, since polyethylene melts at 135\degree C and polypropylene at 155\degree C.
+At these temperatures the pores in the separator will close, thereby preventing lithium ions from migrating between the electrodes and effectively halting the cell reactions from proceeding.
+However, if the separator melts and flows, the electrical isolation may be compromised.
+It is therefore desirable to use an additional, heat-resistant material in the separator formulation.
+Some manufacturers have used refractory metal oxides such as Al \textsubscript{2}O\textsubscript{3} for this purpose \cite{reddy_thomas_section_2011-5}.
 
 %------------------------------------------------
 
-\subsection{Safety}
+\section{Capacitor chemistry}
 
-%------------------------------------------------
+This project is about the interaction between chemistry and electrical machines, and can be said to roughly involve three critical components: The battery, the AC/DC converter, and the DC-link capacitor, which we hope to eliminate.
+The battery lies firmly within the realm of chemistry and the AC/DC converter within the realm of electrical engineering.
+The capacitor, on the other hand, is a little of both.
+Although traditionally viewed as a purely electrical component, several common capacitor types operate by partially or wholly chemical mechanisms (for example, the electrolytical and electrochemical capacitor families).
 
-\subsection{Battery management systems}
+\subsection{Ceramic capacitors}
+
+The most widely used capacitor type with 90\% marketshare in terms of units sold and 40\% in terms of unit value, the ceramic capacitor is not particularly interesting from a chemical perspective.
+It consists of two metal plates with a dielectric material between them.
+Although there is obviously some chemistry involved in the formulation of the dielectric, once it's in place there is no further chemistry involved in the energy storage mechanism itself.
+Since ceramic capacitors contains no liquid, they can withstand high temperatures and voltages, up to hundreds of degrees Celsius and thousands of Volts \cite{pan_brief_2010}.
+
+\subsection{Electrolytical capacitors}
+
+As the name suggests, the electrolytical capacitor contains an electrolyte, usually an ionically condutive liquid.
+However, the energy storage mechanism is not electrochemical in nature, but rather purely electrostatic like most capacitor types.
+It consists of two sheets of metal foil, between which is a sheet of paper soaked in electrolyte.
+The metal is typically aluminium due to its ability to form a thin, passivating oxide layer in the presence of oxygen.
+This oxide layer is the dielectric of the electrolytic capacitor.
+Therefore the electrostatic charge is actually stored between one of aluminium sheets and the electrolyte itself, and not between the two metal sheets.
+In effect, the electrolyte is an electrode, and the other aluminium sheet which is not involved in the charge storage is little more than a current collector.
+The aluminium foil on which the dielectric oxide layer is located is always the positive electrode, because if the polarity of the capacitor were reversed the oxide layer would dissolve and a short-circuit would form, destroying the capacitor.
+\\
+The performance of an aluminium based electrolytic capacitor can be influenced in several ways.
+Recalling that the capacitance is inversely proportional to the thickness of the dielectric material, one way to increase the capacity of an electrolytic capacitor is to make the aluminium oxide layer as thin as possible.
+However, with a thicker oxide layer the capacitor can withstand higher voltages, at the cost of capacitance.
+The capacitance is also directly proportional to the surface area of the electrodes, which may be increased by roughening the aluminium foils in a process called "etching" \cite{cdm_cornell_dubilier_aeappguide.pdf_????}.
+\\
+Figure \ref{fig:electrolytic} shows an illustrated cross-section of an electrolytic capacitor.
+\begin{figure}[H] % Example image
+\center{\includegraphics[width=0.5\linewidth]{Bilder/Elko-Prinzipschnittbild-english.png}}
+\caption{Schematic overview of an electrolytic capacitor.}
+\label{fig:electrolytic}
+\end{figure}
+
+\subsection{Electrochemical capacitors}
+
+Unlike other capacitor types, the energy storage mechanism in electrochemical capacitors is only partially electrostatic in nature.
+Charge is also stored faradaically via chemical reactions, a phenomenon which is called "pseudocapacitance".
+The electrostatic energy storage is due to charge separation across the Helmholz layer, which is a plane of ions at each electrode, where the ions are of opposite charge compared to the electrodes.
+The distance between the capacitor "plates" is very small, being roughly equal to half the diameter of the ions, meaning the order of magitude is measured in Ångströms.
+This results in high specific capacitances of 15 - 30 µF/cm\textsuperscript{2}.
+The active material in electrochemical capacitors is usually active carbon, which has a surface area in the order of magnitude of 1000 m\textsuperscript{2}/g.
+Combined, these numbers yield capacitances measured in hundreds of Farads per gram of active material, which is far beyond what any other type of capacitor can achieve.
+\\
+The other storage mechanism, pseudocapacitance, is so called because it is in fact not electrostatic in nature, and thus not a true capacitance.
+It involves charge transfer reations on the electrode surfaces, which are voltage dependent.
+Because of this the capacitance of electrochemical capacitors is not constant with regard to the voltage.
+\\
+Electrochemical capacitors can be manufactured to make more of less use of one or the other energy storage mechanism, but both types will always be present to some degree \cite{reddy_thomas_section_2011-5}.
 
 %----------------------------------------------------------------------------------------
 %	MAJOR SECTION X - TEMPLATE - UNCOMMENT AND FILL IN
